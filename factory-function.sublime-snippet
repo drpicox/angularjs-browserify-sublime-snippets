@@ -1,0 +1,26 @@
+<snippet>
+    <content><![CDATA[// ${1:ServiceFunc}.factory.js
+/*
+	${1:ServiceFunc}:
+    	-    
+
+*/
+'use strict';
+
+module.exports = ${1:ServiceFunc}Factory;
+
+/* @ngInject */
+${1:ServiceFunc}Factory(${2:dependencies}) {
+
+	return ${1:ServiceFunc};
+
+	//////
+
+	function ${1:ServiceFunc}() {
+
+	}
+}
+]]></content>
+    <tabTrigger>factory-function</tabTrigger>
+    <scope>source.js, text.plain</scope>
+</snippet>

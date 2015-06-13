@@ -1,0 +1,42 @@
+<snippet>
+    <content><![CDATA[// ${1:ServiceName}.provider.js
+/*
+	${1:ServiceName}:
+    	-    
+
+    config:
+    	-
+
+*/
+'use strict';
+
+module.exports = ${1:ServiceName}Provider;
+
+
+/* @ngInject */
+${1:ServiceName}Provider(${2:providers}) {
+	var config = this.config = {
+		${3:config}: ${4:value},
+	};
+
+	/* @ngInject */
+	this.$get = ${1:ServiceName}Factory;
+
+
+	${1:ServiceName}Factory(${5:dependencies}) {
+		var service = {
+			${6:func}: ${6:func},//()
+		};
+		return service;
+
+		//////
+		
+		function ${6:func}() {
+			
+		}
+	}
+}
+]]></content>
+    <tabTrigger>provider-service</tabTrigger>
+    <scope>source.js, text.plain</scope>
+</snippet>

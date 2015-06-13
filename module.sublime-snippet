@@ -1,0 +1,19 @@
+<snippet>
+    <content><![CDATA[// index.js
+/*
+    Module ${1:module.name}
+*/
+'use strict';
+
+module.exports = angular.module('${1:module.name}', [
+
+	require('../${1:module.name}.${2:submodule}'),
+])
+
+${3:module-component}
+
+.name;
+]]></content>
+    <tabTrigger>module</tabTrigger>
+    <scope>source.js, text.plain</scope>
+</snippet>
