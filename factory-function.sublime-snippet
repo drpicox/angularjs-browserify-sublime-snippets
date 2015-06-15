@@ -1,22 +1,22 @@
 <snippet>
-    <content><![CDATA[// ${1:ServiceFunc}.factory.js
+    <content><![CDATA[// ${1:func}.factory.js
 /*
-	${1:ServiceFunc}:
+	${1:func}:
     	-    
 
 */
 'use strict';
 
-module.exports = ${1:ServiceFunc}Factory;
+module.exports = ${1:func}Factory;
 
 /* @ngInject */
-${1:ServiceFunc}Factory(${2:dependencies}) {
+${1:func}Factory(${2:dependencies}) {
 
-	return ${1:ServiceFunc};
+	return ${1:func};
 
 	//////
 
-	function ${1:ServiceFunc}() {
+	function ${1:func}() {
 
 	}
 }
