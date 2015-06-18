@@ -1,7 +1,7 @@
 <snippet>
-    <content><![CDATA[// ${1:SomeRoute}.config.js
+	<content><![CDATA[// ${1:SomeRoute}.config.js
 /*
-    ${1:Path}Route
+	${1:Path}Route
 
 */
 'use strict';
@@ -28,6 +28,6 @@ function ${1:Path}Controller(${5:resolve}) {
 }
 
 ]]></content>
-    <tabTrigger>config-route</tabTrigger>
-    <scope>source.js, text.plain</scope>
+	<tabTrigger>config-route</tabTrigger>
+	<scope>source.js, text.plain</scope>
 </snippet>

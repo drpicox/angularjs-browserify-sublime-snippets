@@ -1,11 +1,11 @@
 <snippet>
-    <content><![CDATA[// ${1:ServiceName}.provider.js
+	<content><![CDATA[// ${1:ServiceName}.provider.js
 /*
 	${1:ServiceName}:
-    	-    
+		-    
 
-    config:
-    	-
+	config:
+		-
 
 */
 'use strict';
@@ -14,7 +14,7 @@ module.exports = ${1:ServiceName}Provider;
 
 
 /* @ngInject */
-${1:ServiceName}Provider(${2:providers}) {
+function ${1:ServiceName}Provider(${2:providers}) {
 	var config = this.config = {
 		${3:config}: ${4:value},
 	};
@@ -37,6 +37,6 @@ ${1:ServiceName}Provider(${2:providers}) {
 	}
 }
 ]]></content>
-    <tabTrigger>provider-service</tabTrigger>
-    <scope>source.js, text.plain</scope>
+	<tabTrigger>provider-service</tabTrigger>
+	<scope>source.js, text.plain</scope>
 </snippet>

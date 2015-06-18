@@ -1,8 +1,8 @@
 <snippet>
-    <content><![CDATA[// ${1:ServiceState}.factory.js
+	<content><![CDATA[// ${1:ServiceState}.factory.js
 /*
 	${1:ServiceState}:
-    	-    
+		-    
 
 */
 'use strict';
@@ -10,7 +10,7 @@
 module.exports = ${1:ServiceState}Factory;
 
 /* @ngInject */
-${1:ServiceState}Factory(${2:dependencies}, drpxUpdateable) {
+function ${1:ServiceState}Factory(${2:dependencies}, drpxUpdateable) {
 	var state = {
 		${3:model}: ${4:value},
 		${5:func}: ${5:func},//()
@@ -25,6 +25,6 @@ ${1:ServiceState}Factory(${2:dependencies}, drpxUpdateable) {
 	}
 }
 ]]></content>
-    <tabTrigger>factory-state</tabTrigger>
-    <scope>source.js, text.plain</scope>
+	<tabTrigger>factory-state</tabTrigger>
+	<scope>source.js, text.plain</scope>
 </snippet>

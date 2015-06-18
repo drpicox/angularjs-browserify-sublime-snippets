@@ -1,9 +1,9 @@
 <snippet>
-    <content><![CDATA[// ${1:Some}.config.js
+	<content><![CDATA[// ${1:Some}.config.js
 /*
-    ${1:Some}Config
+	${1:Some}Config
 
-    	${2:Some documentation}
+		${2:Some documentation}
 */
 'use strict';
 
@@ -15,6 +15,6 @@ function ${1:Some}Config(${3:providers}) {
 }
 
 ]]></content>
-    <tabTrigger>config-config</tabTrigger>
-    <scope>source.js, text.plain</scope>
+	<tabTrigger>config-config</tabTrigger>
+	<scope>source.js, text.plain</scope>
 </snippet>

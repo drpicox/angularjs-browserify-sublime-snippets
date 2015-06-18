@@ -1,7 +1,7 @@
 <snippet>
-    <content><![CDATA[// ${1:Some}.directive.js
+	<content><![CDATA[// ${1:Some}.directive.js
 /*
-    ${1:Some}Directive
+	${1:Some}Directive
 */
 'use strict';
 
@@ -21,6 +21,6 @@ function ${1:Some}Directive(${2:dirdependencies}) {
 }
 
 ]]></content>
-    <tabTrigger>directive-decorator</tabTrigger>
-    <scope>source.js, text.plain</scope>
+	<tabTrigger>directive-decorator</tabTrigger>
+	<scope>source.js, text.plain</scope>
 </snippet>

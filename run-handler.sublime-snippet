@@ -1,9 +1,9 @@
 <snippet>
-    <content><![CDATA[// ${1:SomeHandler}.run.js
+	<content><![CDATA[// ${1:SomeHandler}.run.js
 /*
-    ${1:SomeHandler}
+	${1:SomeHandler}
 
-    	${2:Some documentation}
+		${2:Some documentation}
 */
 'use strict';
 
@@ -15,6 +15,6 @@ function ${1:SomeHandler}(${3:dependencies}) {
 }
 
 ]]></content>
-    <tabTrigger>run-handler</tabTrigger>
-    <scope>source.js, text.plain</scope>
+	<tabTrigger>run-handler</tabTrigger>
+	<scope>source.js, text.plain</scope>
 </snippet>

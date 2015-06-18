@@ -1,11 +1,11 @@
 <snippet>
-    <content><![CDATA[// ${1:ServiceRemote}.provider.js
+	<content><![CDATA[// ${1:ServiceRemote}.provider.js
 /*
 	${1:ServiceRemote}:
-    	- ${7:load}(query): *result
+		- ${7:load}(query): *result
 
-    config:
-    	-
+	config:
+		-
 
 */
 'use strict';
@@ -14,7 +14,7 @@ module.exports = ${1:ServiceRemote}Provider;
 
 
 /* @ngInject */
-${1:ServiceRemote}Provider(${2:providers}) {
+function ${1:ServiceRemote}Provider(${2:providers}) {
 	var config = this.config = {
 		${3:url}: '/${4:api}',
 	};
@@ -39,6 +39,6 @@ ${1:ServiceRemote}Provider(${2:providers}) {
 	}
 }
 ]]></content>
-    <tabTrigger>provider-service</tabTrigger>
-    <scope>source.js, text.plain</scope>
+	<tabTrigger>provider-service</tabTrigger>
+	<scope>source.js, text.plain</scope>
 </snippet>

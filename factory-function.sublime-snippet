@@ -1,8 +1,8 @@
 <snippet>
-    <content><![CDATA[// ${1:func}.factory.js
+	<content><![CDATA[// ${1:func}.factory.js
 /*
 	${1:func}:
-    	-    
+		-    
 
 */
 'use strict';
@@ -10,7 +10,7 @@
 module.exports = ${1:func}Factory;
 
 /* @ngInject */
-${1:func}Factory(${2:dependencies}) {
+function ${1:func}Factory(${2:dependencies}) {
 
 	return ${1:func};
 
@@ -21,6 +21,6 @@ ${1:func}Factory(${2:dependencies}) {
 	}
 }
 ]]></content>
-    <tabTrigger>factory-function</tabTrigger>
-    <scope>source.js, text.plain</scope>
+	<tabTrigger>factory-function</tabTrigger>
+	<scope>source.js, text.plain</scope>
 </snippet>

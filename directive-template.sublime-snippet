@@ -1,7 +1,7 @@
 <snippet>
-    <content><![CDATA[// ${1:Some}.directive.js
+	<content><![CDATA[// ${1:Some}.directive.js
 /*
-    ${1:Some}Directive
+	${1:Some}Directive
 */
 'use strict';
 
@@ -11,7 +11,7 @@ module.exports = ${1:Some}Directive;
 function ${1:Some}Directive(${2:dirdependencies}) {
 	var directive = {
 		restrict: 'E',
-		template: require('./${1:Some}.tpl.html'),
+		template: require('./${1:Some}Directive.tpl.html'),
 		scope: {
 			${3:bindings},
 		},
@@ -37,6 +37,6 @@ function ${1:Some}Controller(${4:ctrldependencies}) {
 
 
 ]]></content>
-    <tabTrigger>directive-template</tabTrigger>
-    <scope>source.js, text.plain</scope>
+	<tabTrigger>directive-template</tabTrigger>
+	<scope>source.js, text.plain</scope>
 </snippet>
