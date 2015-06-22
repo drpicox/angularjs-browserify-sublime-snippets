@@ -20,10 +20,10 @@ function ${1:ServiceRemote}Provider(${2:providers}) {
 	};
 
 	/* @ngInject */
-	this.$get = ${1:ServiceRemote}Factory;
+	this.\$get = ${1:ServiceRemote}Factory;
 
 
-	${1:ServiceRemote}Factory(${5:dependencies},${6:$http}) {
+	function ${1:ServiceRemote}Factory(${5:dependencies,}${6:\$http}) {
 		var remote = {
 			${7:load}: ${7:load},//()
 		};
@@ -32,13 +32,13 @@ function ${1:ServiceRemote}Provider(${2:providers}) {
 		//////
 		
 		function ${7:load}(query) {
-			return ${6:$http}.get(config.${3:url}, {params:query}).then(function(response) {
+			return ${6:\$http}.get(config.${3:url}, {params:query,cache:true}).then(function(response) {
 				return response.data;
 			});
 		}
 	}
 }
 ]]></content>
-	<tabTrigger>provider-service</tabTrigger>
+	<tabTrigger>provider-remote</tabTrigger>
 	<scope>source.js, text.plain</scope>
 </snippet>

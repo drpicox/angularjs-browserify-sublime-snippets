@@ -5,9 +5,11 @@
 */
 'use strict';
 
+var angular = require('angular');
+
 module.exports = angular.module('${1:module.name}', [
 
-	require('../${1:module.name}.${2:submodule}'),
+	${2:require-module}
 ])
 
 ${3:module-component}

@@ -20,10 +20,10 @@ function ${1:ServiceName}Provider(${2:providers}) {
 	};
 
 	/* @ngInject */
-	this.$get = ${1:ServiceName}Factory;
+	this.\$get = ${1:ServiceName}Factory;
 
 
-	${1:ServiceName}Factory(${5:dependencies}) {
+	function ${1:ServiceName}Factory(${5:dependencies}) {
 		var service = {
 			${6:func}: ${6:func},//()
 		};
