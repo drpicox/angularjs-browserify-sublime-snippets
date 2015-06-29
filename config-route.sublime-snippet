@@ -1,30 +1,35 @@
 <snippet>
-	<content><![CDATA[// ${1:SomeRoute}.config.js
+	<content><![CDATA[// ${1:CamelPath}Route.config.js
 /*
 	${1:Path}Route
 
 */
 'use strict';
 
-module.exports = ${1:Path}Route;
+module.exports = ${1:Path}RouteConfig;
 
 /* @ngInject */
-function ${1:Path}Route(${3:providers},$routeProvider) {
-	$routeProvider.when('/${4:path}', {
-		template: require('./${1:Path}.tpl.html'),
-		controller: ${1:Path}Controller,
+function ${1:Path}RouteConfig(${2:providers}\$routeProvider) {
+	\$routeProvider.when('/${3:shashpath}', {
+		template: require('./${1:Path}Route.tpl.html'),
+		controller: ${1:Path}RouteController,
 		controllerAs: 'vm',
 		resolve: {
-			${5:resolve}
+			${4:some}: ${5:Some}Resolver,
 		}
 	});
 }
 
 /* @ngInject */
-function ${1:Path}Controller(${5:resolve}) {
+function ${5:Some}Resolver(${6:resdependencies}) {
+	return ${6:resdependencies};
+}
+
+/* @ngInject */
+function ${1:Path}RouteController(${4:some}) {
 	var vm = this;
 
-	vm.${5:resolve} = ${5:resolve};
+	vm.${4:some} = ${4:some};
 }
 
 ]]></content>

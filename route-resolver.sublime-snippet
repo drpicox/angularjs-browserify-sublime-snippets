@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[/* @ngInject */
+function ${1:Some}Resolver(${2:dependencies}) {
+	return ${2:dependencies};
+}
+]]></content>
+	<tabTrigger>route-resolver</tabTrigger>
+	<scope>source.js</scope>
+</snippet>
