@@ -1,16 +1,16 @@
 <snippet>
-	<content><![CDATA[// ${1:ServiceName}.factory.js
+	<content><![CDATA[// ${1:serviceName}.factory.js
 /*
-	${1:ServiceName}:
+	${1:serviceName}:
 		-    
 
 */
 'use strict';
 
-module.exports = ${1:ServiceName}Factory;
+module.exports = ${1:serviceName}Factory;
 
 /* @ngInject */
-function ${1:ServiceName}Factory(${2:dependencies}) {
+function ${1:serviceName}Factory(${2:dependencies}) {
 	var service = {
 		${3:method}: ${3:method},//()
 	};

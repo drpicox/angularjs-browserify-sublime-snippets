@@ -1,5 +1,5 @@
 <snippet>
-    <content><![CDATA[.${1:run}(require('./${2:SomeHandler}.${1:run}'))
+    <content><![CDATA[.${1:run}(require('./${2:someHandler}.${1:run}'))
 ]]></content>
     <tabTrigger>module-run</tabTrigger>
     <scope>source.js, text.plain</scope>

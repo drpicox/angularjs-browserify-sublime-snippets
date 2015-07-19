@@ -1,16 +1,16 @@
 <snippet>
-	<content><![CDATA[// ${1:SomeHandler}.run.js
+	<content><![CDATA[// ${1:someHandler}.run.js
 /*
-	${1:SomeHandler}
+	${1:someHandler}
 
 		${2:Some documentation}
 */
 'use strict';
 
-module.exports = ${1:SomeHandler};
+module.exports = ${1:someHandler};
 
 /* @ngInject */
-function ${1:SomeHandler}(${3:dependencies}) {
+function ${1:someHandler}(${3:dependencies}) {
 	${4:code}
 }
 

@@ -1,5 +1,5 @@
 <snippet>
-    <content><![CDATA[.${1:config}(require('./${2:SomeConfig}.${1:config}'))
+    <content><![CDATA[.${1:config}(require('./${2:someConfig}.${1:config}'))
 ]]></content>
     <tabTrigger>module-config</tabTrigger>
     <scope>source.js, text.plain</scope>

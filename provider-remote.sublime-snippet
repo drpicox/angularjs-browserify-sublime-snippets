@@ -1,7 +1,7 @@
 <snippet>
-	<content><![CDATA[// ${1:ServiceRemote}.provider.js
+	<content><![CDATA[// ${1:serviceRemote}.provider.js
 /*
-	${1:ServiceRemote}:
+	${1:serviceRemote}:
 		- ${7:load}(query): *result
 
 	config:
@@ -10,20 +10,20 @@
 */
 'use strict';
 
-module.exports = ${1:ServiceRemote}Provider;
+module.exports = ${1:serviceRemote}Provider;
 
 
 /* @ngInject */
-function ${1:ServiceRemote}Provider(${2:providers}) {
+function ${1:serviceRemote}Provider(${2:providers}) {
 	var config = this.config = {
 		${3:url}: '/${4:api}',
 	};
 
 	/* @ngInject */
-	this.\$get = ${1:ServiceRemote}Factory;
+	this.\$get = ${1:serviceRemote}Factory;
 
 
-	function ${1:ServiceRemote}Factory(${5:dependencies,}${6:\$http}) {
+	function ${1:serviceRemote}Factory(${5:dependencies,}${6:\$http}) {
 		var remote = {
 			${7:load}: ${7:load},//()
 		};

@@ -1,7 +1,7 @@
 <snippet>
-	<content><![CDATA[// ${1:ServiceName}.provider.js
+	<content><![CDATA[// ${1:serviceName}.provider.js
 /*
-	${1:ServiceName}:
+	${1:serviceName}:
 		-    
 
 	config:
@@ -10,20 +10,20 @@
 */
 'use strict';
 
-module.exports = ${1:ServiceName}Provider;
+module.exports = ${1/(.+)/\u\1/g}Provider;
 
 
 /* @ngInject */
-function ${1:ServiceName}Provider(${2:providers}) {
+function ${1/(.+)/\u\1/g}Provider(${2:providers}) {
 	var config = this.config = {
 		${3:config}: ${4:value},
 	};
 
 	/* @ngInject */
-	this.\$get = ${1:ServiceName}Factory;
+	this.\$get = ${1:serviceName}Factory;
 
 
-	function ${1:ServiceName}Factory(${5:dependencies}) {
+	function ${1:serviceName}Factory(${5:dependencies}) {
 		var service = {
 			${6:method}: ${6:method},//()
 		};

@@ -1,20 +1,20 @@
 <snippet>
-	<content><![CDATA[// ${1:ServiceState}.factory.js
+	<content><![CDATA[// ${1:service}State.factory.js
 /*
-	${1:Service}State:
+	${1:service}State:
 		-    
 
 */
 'use strict';
 
-module.exports = ${1:Service}StateFactory;
+module.exports = ${1:service}StateFactory;
 
 /* @ngInject */
-function ${1:Service}StateFactory(${2:dependencies}, drpxUpdateable) {
+function ${1:service}StateFactory(${2:dependencies}, drpxUpdateable) {
 	var state = {
 		${3:model}: ${4:value},
 		${5:method}: ${5:method},//()
-		\$update: drpxUpdateable('${6:app}.${1:Service}'),
+		\$update: drpxUpdateable('${6:app}.${1:service}'),
 	};
 	return state;
 
