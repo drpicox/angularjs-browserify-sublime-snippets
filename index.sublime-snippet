@@ -16,6 +16,6 @@ ${3:module-component}
 
 .name;
 ]]></content>
-	<tabTrigger>module</tabTrigger>
+	<tabTrigger>index</tabTrigger>
 	<scope>source.js, text.plain</scope>
 </snippet>
