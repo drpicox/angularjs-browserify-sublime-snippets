@@ -1,5 +1,5 @@
 <snippet>
-    <content><![CDATA[.${1:factory}('${2:serviceName}', require('./${2:serviceName}.${1:factory}'))
+    <content><![CDATA[.${1:factory}('${2:serviceName}', require('./${2/(.+)/\u\1/g}.${1:factory}'))
 ]]></content>
     <tabTrigger>module-factory</tabTrigger>
     <scope>source.js, text.plain</scope>

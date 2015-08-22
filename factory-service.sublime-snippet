@@ -1,5 +1,5 @@
 <snippet>
-	<content><![CDATA[// ${1:serviceName}.factory.js
+	<content><![CDATA[// ${1/(.+)/\u\1/g}.factory.js
 /*
 	${1:serviceName}:
 		-    

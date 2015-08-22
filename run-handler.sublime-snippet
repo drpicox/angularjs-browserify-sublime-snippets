@@ -1,5 +1,5 @@
 <snippet>
-	<content><![CDATA[// ${1:someHandler}.run.js
+	<content><![CDATA[// ${1/(.+)/\u\1/g}.run.js
 /*
 	${1:someHandler}
 

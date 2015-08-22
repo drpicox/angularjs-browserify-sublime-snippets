@@ -1,16 +1,16 @@
 <snippet>
-	<content><![CDATA[// ${1:some}.config.js
+	<content><![CDATA[// ${1/(.+)/\u\1/g}.config.js
 /*
-	${1:some}Config
+	${1:Some}Config
 
-		${2:some documentation}
+		${2:Some documentation}
 */
 'use strict';
 
-module.exports = ${1:some}Config;
+module.exports = ${1:Some}Config;
 
 /* @ngInject */
-function ${1:some}Config(${3:providers}) {
+function ${1:Some}Config(${3:providers}) {
 	${4:code}
 }
 

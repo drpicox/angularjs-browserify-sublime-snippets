@@ -1,5 +1,5 @@
 <snippet>
-	<content><![CDATA[// ${1:serviceName}.provider.js
+	<content><![CDATA[// ${1/(.+)/\u\1/g}.provider.js
 /*
 	${1:serviceName}:
 		-    
@@ -19,10 +19,10 @@ function ${1/(.+)/\u\1/g}Provider(${2:providers}) {
 		${3:config}: ${4:value},
 	};
 
-	/* @ngInject */
 	this.\$get = ${1:serviceName}Factory;
 
 
+	/* @ngInject */
 	function ${1:serviceName}Factory(${5:dependencies}) {
 		var service = {
 			${6:method}: ${6:method},//()

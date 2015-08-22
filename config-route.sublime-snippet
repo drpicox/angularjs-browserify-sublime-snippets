@@ -15,14 +15,14 @@ function ${1:Path}RouteConfig(${2:providers}\$routeProvider) {
 		controller: ${1:Path}RouteController,
 		controllerAs: 'vm',
 		resolve: {
-			${4:some}: ${5:Some}Resolver,
+			${4:some}: ${4/(.+)/\u\1/g0'}Resolver,
 		}
 	});
 }
 
 /* @ngInject */
-function ${5:Some}Resolver(${6:resdependencies}) {
-	return ${6:resdependencies};
+function ${4/(.+)/\u\1/g0'}Resolver(${5:resdependencies}) {
+	return ${5:resdependencies};
 }
 
 /* @ngInject */
