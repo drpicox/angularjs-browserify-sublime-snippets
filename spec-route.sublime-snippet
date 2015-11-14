@@ -1,0 +1,44 @@
+<snippet>
+	<content><![CDATA[// ${1:CamelPath}Route.spec.js
+'use strict';
+
+describe('${2:/route/path}', function() {
+	var ngView, vm;
+
+	beforeEach(module('${3:module.name}'));
+
+	beforeEach(module(function(\$provide) {
+		var ${4:someService} = jasmine.createSpyObj('${4:someService}', ['${6:method}']);
+		\$provide.value('${4:someService}', ${4:someService});
+	}));
+
+	beforeEach(function() {
+		ngView = vm = null;
+	});
+
+	it('should have vm which is the controller', function() {
+		instanceRoute();
+		expect(ngView.controller()).toBeDefined();
+		expect(vm).toBe(ngView.controller());
+	});
+
+	it('should have ${5:data}', inject(function(${4:someService}) {
+		instanceRoute();
+		expect(vm.${5:data}).toBe(${4:someService}._${4:method});
+	}));
+
+	function instanceRoute() {
+		inject(function(\$compile,\$location,\$rootScope) {
+			var root = \$compile('<div><div ng-view></div></div>')(\$rootScope);
+			\$location.path('${2:/route/path}');
+			\$rootScope.\$digest();
+			ngView = root.children();
+			vm = ngView.scope().vm;
+		});
+	}
+});
+
+]]></content>
+	<tabTrigger>spec-route</tabTrigger>
+	<scope>source.js, text.plain</scope>
+</snippet>

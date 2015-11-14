@@ -1,0 +1,14 @@
+<snippet>
+	<content><![CDATA[// ${1/(.+)/\u\1/g}.factory.js
+describe('${1:artifactName}', function() {
+	'use strict';
+	
+	beforeEach(module('${2:module.name}'));
+
+	${3:it}
+
+});
+]]></content>
+	<tabTrigger>spec</tabTrigger>
+	<scope>source.js, text.plain</scope>
+</snippet>

@@ -1,0 +1,41 @@
+<snippet>
+	<content><![CDATA[// ${1:CamelPath}Route.spec.js
+'use strict';
+
+describe('${2:/route/path}', function() {
+	var ngView, vm;
+
+	beforeEach(module('${3:module.name}.routes'));
+
+	beforeEach(module(function($provide) {
+		\$provide.service('ProductsService', function(\$q) {
+			this._${4:method} = {};
+			this.${4:method} = function() { return \$q.when(this._${4:method}); };
+		});
+	}));
+
+	beforeEach(inject(function(\$compile,\$location,\$rootScope) {
+		var root = \$compile('<div><div ng-view></div></div>')(\$rootScope);
+		\$location.path('${2:/route/path}');
+		\$rootScope.\$digest();
+		ngView = root.children();
+		vm = ngView.scope().vm;
+	}));
+
+
+	it('should have vm which is the controller', function() {
+
+		expect(ngView.controller()).toBeDefined();
+		expect(vm).toBe(ngView.controller());
+	});
+
+	it('should have ${5:data}', inject(function(ProductsService) {
+		
+		expect(vm.${5:data}).toBe(ProductsService._${4:method});
+	}));
+});
+
+]]></content>
+	<tabTrigger>spec-directive</tabTrigger>
+	<scope>source.js, text.plain</scope>
+</snippet>

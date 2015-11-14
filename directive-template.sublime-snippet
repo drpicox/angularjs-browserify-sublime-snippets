@@ -1,7 +1,7 @@
 <snippet>
 	<content><![CDATA[// ${1:Some}.directive.js
 /*
-	${1:Some}Directive
+	${1:Some}
 */
 'use strict';
 
@@ -11,13 +11,13 @@ module.exports = ${1:Some}Directive;
 function ${1:Some}Directive(${2:dirdependencies}) {
 	var directive = {
 		restrict: 'E',
-		template: require('./${1:Some}Directive.tpl.html'),
-		scope: {
-			${3:bindings},
-		},
+		template: require('./${1:Some}.tpl.html'),
+		scope: {},
 		controller: ${1:Some}Controller,
 		controllerAs: 'vm',
-		bindToController: true,
+		bindToController: {
+			${3:bindings}		
+		},
 	};
 	return directive;
 }

@@ -1,0 +1,35 @@
+<snippet>
+	<content><![CDATA[// ${1/(.+)/\u\1/g}.spec.js
+describe('${1:someRemote}', function() {
+	'use strict';
+
+	beforeEach(module('${2:module.name}'));
+
+	beforeEach(module('ng', function(\$exceptionHandlerProvider) {
+		\$exceptionHandlerProvider.mode('log');
+	}));
+
+	it('should return ${3:something}', inject(function(${1:some},\$httpBackend) {
+
+		var result;
+		var expected = ${5:something};
+		\$httpBackend.expect('GET','${4:/api}').respond(expected);
+
+		${1:some}.${6:query}(${7:value}).then(function(rawResult) {
+			result = rawResult;
+		});
+
+		\$httpBackend.flush();
+		expect(result).toBe(expected);
+	}));
+	
+	afterEach(inject(function(\$httpBackend) {
+		\$httpBackend.verifyNoOutstandingExpectation();
+		\$httpBackend.verifyNoOutstandingRequest();
+	}));
+});
+
+]]></content>
+	<tabTrigger>spec-remote</tabTrigger>
+	<scope>source.js, text.plain</scope>
+</snippet>
