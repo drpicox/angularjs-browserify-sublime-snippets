@@ -1,0 +1,31 @@
+<snippet>
+	<content><![CDATA[// ${1/(.+)/\u\1/g}State.spec.js
+describe('${1:models}State', function() {
+	'use strict';
+
+	beforeEach(module('${2:appinitials}.${3:module.name}'));
+
+	beforeEach(module('ng', function(\$exceptionHandlerProvider) {
+		\$exceptionHandlerProvider.mode('log');
+	}));
+
+	${4:it}
+	
+	it('should evantually fire ${2:appinitials}.${1:models}Update when \$update', inject(function(${1:models}State, \$rootScope) {
+		var fired;
+
+		var unon = \$rootScope.\$on('${2:appinitials}.${1:models}Update', function() {
+			fired = true;
+		});
+		${1:models}State.\$update();
+		\$rootScope.\$digest();
+
+		expect(fired).toBe(true);
+		unon();
+	}));
+});
+
+]]></content>
+	<tabTrigger>spec-state</tabTrigger>
+	<scope>source.js, text.plain</scope>
+</snippet>

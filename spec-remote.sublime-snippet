@@ -20,7 +20,7 @@ describe('${1:someRemote}', function() {
 		});
 
 		\$httpBackend.flush();
-		expect(result).toBe(expected);
+		expect(result).toEqual(expected);
 	}));
 	
 	afterEach(inject(function(\$httpBackend) {

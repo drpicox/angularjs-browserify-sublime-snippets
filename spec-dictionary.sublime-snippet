@@ -1,0 +1,84 @@
+<snippet>
+	<content><![CDATA[// ${1/(.+)/\u\1/g}sDictionary.spec.js
+describe('${1/(.+)/\u\1/g}sDictionary', function() {
+	'use strict';
+
+	beforeEach(module('${2:codename}.${3:module.name.services}'));
+
+	function ${1/(.+)/\u\1/g}(id) {
+		this.id = id;
+	}
+	${1/(.+)/\u\1/g}.prototype.take = function(data) { this.taken = data; };
+	beforeEach(module(function(\$provide) {
+		\$provide.value('${1/(.+)/\u\1/g}', ${1/(.+)/\u\1/g});
+	}));
+
+	it('should take an array of data as ${1/(.+)/\u\1/g}', inject(function(${1:model}sDictionary) {
+		
+		var datas = [{id:1},{id:2}];
+		${1:model}sDictionary.takeAll(datas);
+
+		expect(${1:model}sDictionary.list.length).toBe(2);
+		expect(${1:model}sDictionary.map[1].id).toBe(1);
+		expect(${1:model}sDictionary.map[2].id).toBe(2);
+
+		var first = ${1:model}sDictionary.list[0].id === 1 ? ${1:model}sDictionary.list[0] : ${1:model}sDictionary.list[1];
+		var second = ${1:model}sDictionary.list[0].id === 2 ? ${1:model}sDictionary.list[0] : ${1:model}sDictionary.list[1];
+
+		expect(first).toBe(${1:model}sDictionary.map[1]);
+		expect(second).toBe(${1:model}sDictionary.map[2]);
+
+		expect(first.taken).toBe(datas[0]);
+		expect(second.taken).toBe(datas[1]);
+
+		expect(first instanceof ${1/(.+)/\u\1/g}).toBe(true);
+		expect(second instanceof ${1/(.+)/\u\1/g}).toBe(true);
+	}));
+
+	it('should not replicate values', inject(function(${1:model}sDictionary) {
+		
+		var data1 = {id:1,t:1};
+		var data2 = {id:1,t:2};
+
+		${1:model}sDictionary.takeAll([data1]);
+		var ${1:model}1 = ${1:model}sDictionary.list[0];
+		expect(${1:model}1.taken).toBe(data1);
+
+		${1:model}sDictionary.takeAll([data2]);
+		var ${1:model}2 = ${1:model}sDictionary.list[0];
+
+		expect(${1:model}1).toBe(${1:model}2);
+		expect(${1:model}sDictionary.map[1]).toBe(${1:model}1);
+		expect(${1:model}1.taken).toBe(data2);
+	}));
+
+	it('should have a getOrCreate method', inject(function(${1:model}sDictionary) {
+		var ${1:model} = ${1:model}sDictionary.getOrCreate(1);
+		expect(${1:model}.id).toBe(1);
+		expect(${1:model}sDictionary.list[0]).toBe(${1:model});
+		expect(${1:model}sDictionary.map[1]).toBe(${1:model});
+		${1:model}.taken = 3;
+
+		var same = ${1:model}sDictionary.getOrCreate(1);
+		expect(same).toBe(${1:model});
+		expect(${1:model}.taken).toBe(3);
+	}));
+	
+	it('should evantually fire ${2:codename}.${1:model}Update when \$update', inject(function(${1:model}sDictionary, \$rootScope) {
+		var fired;
+
+		var unlisten = \$rootScope.\$on('${2:codename}.${1:model}sUpdate', function() {
+			fired = true;
+		});
+		${1:model}sDictionary.\$update();
+		\$rootScope.\$digest();
+
+		expect(fired).toBe(true);
+		unlisten();
+	}));
+});
+
+]]></content>
+	<tabTrigger>spec-dictionary</tabTrigger>
+	<scope>source.js, text.plain</scope>
+</snippet>

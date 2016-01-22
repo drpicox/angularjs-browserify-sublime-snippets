@@ -1,0 +1,17 @@
+<snippet>
+	<content><![CDATA[it('should evantually fire ${2:appinitials}.${1:models}Update when \$update', inject(function(${1:models}State, \$rootScope) {
+		var fired;
+
+		var unlisten = \$rootScope.\$on('${2:appinitials}.${1:models}Update', function() {
+			fired = true;
+		});
+		${1:models}State.\$update();
+		\$rootScope.\$digest();
+
+		expect(fired).toBe(true);
+		unlisten();
+	}));
+]]></content>
+	<tabTrigger>spec-state-updateable</tabTrigger>
+	<scope>source.js</scope>
+</snippet>

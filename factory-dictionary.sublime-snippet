@@ -1,0 +1,40 @@
+<snippet>
+	<content><![CDATA[// ${1/(.+)/\u\1/g}sDictionary.factory.js
+'use strict';
+
+module.exports = ${1/(.+)/\u\1/g}sDictionaryFactory;
+
+/* @ngInject */
+function ${1/(.+)/\u\1/g}sDictionaryFactory(${2:dependencies}, ${1/(.+)/\u\1/g}, drpxUpdateable) {
+	var dictionary = {
+		list: [],
+		map: {},
+		getOrCreate: getOrCreate,
+		takeAll: takeAll,
+		\$update: drpxUpdateable('${3:codename}.${1:model}sUpdate'),
+	};
+	return dictionary;
+
+	//////
+
+	function getOrCreate(id) {
+		var ${1:model} = dictionary.map[id];
+		if (!${1:model}) {
+			${1:model} = new ${1/(.+)/\u\1/g}(id);
+			dictionary.list.push(${1:model});
+			dictionary.map[id] = ${1:model};
+		}
+		return ${1:model};
+	}
+
+	function takeAll(${1:model}InfoList) {
+		${1:model}InfoList.forEach(function(${1:model}Info) {
+			var ${1:model} = getOrCreate(${1:model}Info.id);
+			${1:model}.take(${1:model}Info);
+		});
+	}
+}
+]]></content>
+	<tabTrigger>factory-dictionary</tabTrigger>
+	<scope>source.js, text.plain</scope>
+</snippet>

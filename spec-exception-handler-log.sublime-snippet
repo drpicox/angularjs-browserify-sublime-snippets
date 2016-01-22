@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[beforeEach(module('ng', function(\$exceptionHandlerProvider) {
+		\$exceptionHandlerProvider.mode('log');
+	}));
+]]></content>
+	<tabTriggeM>spe-exception-handler-log</tabTrigger>
+	<scope>source.js</scope>
+</snippet>

@@ -1,0 +1,11 @@
+<snippet>
+	<content><![CDATA[var ${1:artifactName};
+beforeEach(module(function(\$provide) {
+	${1:artifactName} = jasmine.createSpyObj('${1:artifactName}', [${2:methodNameList}]);
+
+	\$provide.value('${1:artifactName}', ${1:artifactName});
+}));
+]]></content>
+	<tabTrigger>beforeeach-provide-spy</tabTrigger>
+	<scope>source.js</scope>
+</snippet>

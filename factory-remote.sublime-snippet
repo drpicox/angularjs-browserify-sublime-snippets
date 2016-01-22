@@ -1,0 +1,30 @@
+<snippet>
+	<content><![CDATA[// ${1/(.+)/\u\1/g}.factory.js
+'use strict';
+
+module.exports = ${1:RemoteName}Factory;
+
+/* @ngInject */
+function ${1:RemoteName}Factory($http${2:dependencies}) {
+	var service = {
+		${3:retrieve}: ${3:retrieve},//()
+	};
+	return service;
+
+	//////
+
+	/**
+	 * Retrieves infromation from the server and returns the data.
+	 *
+	 * @return {promise} promise to resolved data
+	 */
+	function ${3:retrieve}() {
+		return $http.get('/${4:api}').then(function(response) {
+			return response.data;
+		});
+	}
+}
+]]></content>
+	<tabTrigger>factory-service</tabTrigger>
+	<scope>source.js, text.plain</scope>
+</snippet>

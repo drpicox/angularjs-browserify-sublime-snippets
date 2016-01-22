@@ -1,0 +1,45 @@
+<snippet>
+	<content><![CDATA[// ${1/(.+)/\u\1/g}Service.spec.js
+describe('${1:models}Service', function() {
+	'use strict';
+
+	beforeEach(module('${2:codename}.${3:modulename.service}'));
+
+	var ${1:models}Dictionary, ${1:models}Remote, ${1:models}Storage;
+	beforeEach(module(function(\$provide) {
+		${1:models}Dictionary = jasmine.createSpyObj('${1:models}Dictionary', ['takeAll','$update']);
+		${1:models}Remote = jasmine.createSpyObj('${1:models}Remote', ['retrieveAll']);
+		${1:models}Storage = jasmine.createSpyObj('${1:models}Storage', ['storeAll']);
+	
+		${1:models}Dictionary.list = [];
+
+		\$provide.value('${1:models}Dictionary', ${1:models}Dictionary);
+		\$provide.value('${1:models}Remote', ${1:models}Remote);
+		\$provide.value('${1:models}Storage', ${1:models}Storage);
+	}));
+	beforeEach(module('ng', function(\$exceptionHandlerProvider) {
+		\$exceptionHandlerProvider.mode('log');
+	}));
+
+	it('load all products from remote, store them in the dictionary and return dictionary list', inject(function(${1:models}Service, \$q, \$rootScope) {
+		
+		var rawList = [1,2,3], result;
+		${1:models}Remote.retrieveAll.and.returnValue(\$q.when(rawList));
+		${1:models}Service.loadAll().then(function(newResult) {
+			result = newResult;
+		});
+
+		\$rootScope.\$digest();
+
+		expect(${1:models}Remote.retrieveAll).toHaveBeenCalled();
+		expect(${1:models}Dictionary.takeAll).toHaveBeenCalledWith(rawList);
+		expect(${1:models}Dictionary.\$update).toHaveBeenCalled();
+		expect(${1:models}Storage.storeAll).toHaveBeenCalledWith(rawList);
+		expect(result).toBe(${1:models}Dictionary.list);
+	}));
+});
+
+]]></content>
+	<tabTrigger>spec-service</tabTrigger>
+	<scope>source.js, text.plain</scope>
+</snippet>

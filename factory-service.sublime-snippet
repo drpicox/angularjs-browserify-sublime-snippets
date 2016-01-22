@@ -1,16 +1,16 @@
 <snippet>
 	<content><![CDATA[// ${1/(.+)/\u\1/g}.factory.js
 /*
-	${1:serviceName}:
+	${1:ServiceName}:
 		-    
 
 */
 'use strict';
 
-module.exports = ${1:serviceName}Factory;
+module.exports = ${1:ServiceName}Factory;
 
 /* @ngInject */
-function ${1:serviceName}Factory(${2:dependencies}) {
+function ${1:ServiceName}Factory(${2:dependencies}) {
 	var service = {
 		${3:method}: ${3:method},//()
 	};

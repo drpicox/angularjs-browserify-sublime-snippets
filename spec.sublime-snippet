@@ -1,11 +1,15 @@
 <snippet>
-	<content><![CDATA[// ${1/(.+)/\u\1/g}.factory.js
+	<content><![CDATA[// ${1/(.+)/\u\1/g}.spec.js
 describe('${1:artifactName}', function() {
 	'use strict';
 	
 	beforeEach(module('${2:module.name}'));
 
-	${3:it}
+	it('${2:what}', inject(function(${1:artifactName}) {
+
+		var result = ${1:artifactName}.${3:test};
+		expect(result).toBe(${4:expected});
+	}));
 
 });
 ]]></content>
