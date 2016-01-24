@@ -1,0 +1,34 @@
+<snippet>
+	<content><![CDATA[// ${1/(.+)/\u\1/g}.spec.js
+describe('${1/(.+)/\u\1/g}', function() {
+	'use strict';
+
+	beforeEach(module('${2:codename}.${3:module.name.services}'));
+
+	it('should have a constructor with id', inject(function(${1/(.+)/\u\1/g}) {
+		
+		var id = 1;
+		var ${1:model} = new ${1/(.+)/\u\1/g}(id);
+
+		expect(${1:model}.id).toBe(id);
+	}));
+
+	it('should have a take method', inject(function(${1/(.+)/\u\1/g}) {
+		
+		var ${1:model}Info = {
+			id: 1,
+			${2:field}: '${2:field}',
+		};
+		var ${1:model} = new ${1/(.+)/\u\1/g}(1);
+		${1:model}.take(${1:model}Info);
+
+		Object.keys(${1:model}Info).forEach(function(key) {
+			expect(${1:model}[key]).toBe(${1:model}Info[key]);
+		});
+	}));
+});
+
+]]></content>
+	<tabTrigger>spec-model</tabTrigger>
+	<scope>source.js, text.plain</scope>
+</snippet>
