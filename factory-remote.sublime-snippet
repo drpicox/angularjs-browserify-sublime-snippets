@@ -25,6 +25,6 @@ function ${1:RemoteName}Factory($http${2:dependencies}) {
 	}
 }
 ]]></content>
-	<tabTrigger>factory-service</tabTrigger>
+	<tabTrigger>factory-remote</tabTrigger>
 	<scope>source.js, text.plain</scope>
 </snippet>
