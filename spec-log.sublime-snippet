@@ -1,6 +1,6 @@
 <snippet>
-	<content><![CDATA[//	beforeEach(module('ng', function($exceptionHandlerProvider) {
-		$exceptionHandlerProvider.mode('log');
+	<content><![CDATA[beforeEach(module('ng', function(\$exceptionHandlerProvider) {
+		\$exceptionHandlerProvider.mode('log');
 	}));
 
 ]]></content>
